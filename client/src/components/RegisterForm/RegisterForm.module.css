@@ -1,0 +1,132 @@
+.row{
+    background: #CFCFCF;;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formContainer{
+    /* background: red; */
+    height: 520px;
+    width: 450px;
+    background: linear-gradient( rgba(0, 0, 0, 0.8), 
+    rgba(0, 0, 0, 0.8)), url('../../assets/coding.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 6px;
+    /* z-index: -100; */
+    border-radius: 5px;
+}
+
+.heading{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 80%;
+    padding: 10px 8px;
+    margin: 10px 0 15px 0;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0px;
+}
+
+.label{
+    margin: 8px 0px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #CFCFCF;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+.formGroup input{
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #9b8d845e;
+    color:  #f5cfad;
+}
+
+.formGroup input::placeholder{
+    color: #f5cfade8;
+    font-size: 12px;
+}
+
+.submitBtn{
+    margin: 25px 0px 8px 0;
+    background: #ffa958;
+    color: #000000;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.underline{
+    background: #ffa958;
+    height: 5px;
+    width: 120px;
+    margin-top: 2px;
+}
+
+#horizontal-line{
+    height: 1px;
+    width: 80%;
+    background: #cfcfcf9c;
+    margin-bottom: 15px;
+}
+
+.formContainer p{
+    font-size: 12px;
+    color: #CFCFCF;
+    letter-spacing: 1px;
+}
+
+
+.forgotPasswordBtn{
+    background: transparent;
+    outline: none;
+    border: 1px solid #ffa958;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 4px;
+    display: flex;
+}
+
+.forgotPasswordBtn a,
+.forgotPasswordBtn a:hover{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #CFCFCF;
+}
