@@ -8,9 +8,7 @@
     "start": "node ./index.js",
     "server": "nodemon ./index.js",
     "dev": "concurrently \"npm run server\" \"cd client && npm run start\" ",
-    "build": "cd client && npm run build",
-    "install-npm":"cd client && npm install",
-    "heroku-postbuild": "npm run install-npm && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
