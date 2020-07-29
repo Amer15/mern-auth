@@ -5,7 +5,7 @@ const morgan = require('morgan');
 require('dotenv').config();
 const cors = require('cors');
 const connectToDB = require('./server/config/db');
-const userRoutes = require('./server/routes/user.route');x
+const userRoutes = require('./server/routes/user.route');
 
 
 const { NODE_ENV, NODE_PORT } = process.env;
