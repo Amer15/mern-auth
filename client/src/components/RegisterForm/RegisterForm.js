@@ -67,10 +67,12 @@ class RegisterForm extends Component {
                 this.notify('success', response.data.message)
             })
             .catch(error => {
+
                 if (error.response.data.error) {
                     this.notify('error', error.response.data.error)
                 }
               
+    
                 this.setState({
                     name: '',
                     email: '',

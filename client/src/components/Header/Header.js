@@ -1,28 +1,31 @@
 import React from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
-import { NavLink} from 'react-router-dom';
-import { removeCookie, removeLocalStorage } from '../../utils/helper';
-
+import { NavLink, withRouter } from 'react-router-dom';
+import { signout, isAuth } from '../../utils/helper';
+import classes from './Header.module.css';
 
 class Header extends React.Component{
 
- 
-
-  logoutHandler(){
-    removeCookie('token');
-    removeLocalStorage('user');
-    window.location.href = '/signin';
+  logoutHandler(props){
+    signout(() => {
+      props.history.push('/');
+    });
   }
-
+  
 
   render() {
     let links;
-    if(this.props.isAuth){
-       links =  <NavLink to="/signin"
-        activeClassName="active-class"
-        onClick={this.logoutHandler}>
-        logout
+    if(isAuth()){
+       links = <>
+        <NavLink to="/dashboard"
+        activeClassName="active-class">
+        Dashboard
         </NavLink>
+        <NavLink to="/signin"
+        onClick={() => this.logoutHandler(this.props)}>
+        Logout
+        </NavLink>
+       </>
     }
     else{
       links =  <>
@@ -39,7 +42,7 @@ class Header extends React.Component{
     }
 
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" variant="dark" className={classes.header}>
       <Navbar.Brand href="#home">MERN AUTH</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -58,4 +61,4 @@ class Header extends React.Component{
   }
 }
 
-export default Header;
+export default withRouter(Header);

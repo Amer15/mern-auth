@@ -10,7 +10,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import PublicRoute from './Routes/PublicRoute';
 import PrivateRoute from './Routes/PrivateRoute';
-import { isAuth, removeCookie } from './utils/helper';
+import { removeCookie } from './utils/helper';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -29,7 +29,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header isAuth = {isAuth()}/>
+        <Header />
         <Switch>
           <Route path="/" exact component={WelcomePage} />
           <PublicRoute restricted path="/register" component={RegisterForm}/>

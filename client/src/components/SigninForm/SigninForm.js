@@ -55,7 +55,7 @@ class SigninForm extends Component {
             }
         })
             .then(response => {
-                console.log(response);
+                // console.log(response);
 
                 this.setState({
                     email: '',
@@ -67,9 +67,9 @@ class SigninForm extends Component {
 
                 this.notify('success', response.data.user);
 
-                // isAuth() ? this.props.history.push('/dashboard') : this.props.history.push('/signin');
+                isAuth() ? this.props.history.push('/dashboard') : this.props.history.push('/signin');
 
-                isAuth() ? window.location.href = '/dashboard' : this.props.history.push('/signin');
+                // isAuth() ? window.location.href = '/dashboard' : this.props.history.push('/signin');
             })
             .catch(error => {
                 if(error.response.data.error){
