@@ -13,7 +13,7 @@ class Dashboard extends Component{
     onClickHandler = (e) => {
         e.preventDefault();
 
-        axios.get('api/users/get-users')
+        axios.get('users/get-users')
         .then(res => {
             this.setState({
                 noOfDocs: res.data.no_of_documents

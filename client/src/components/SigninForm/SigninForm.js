@@ -49,7 +49,7 @@ class SigninForm extends Component {
             password
         }
 
-        axios.post('api/users/sign-in', userData, {
+        axios.post('users/sign-in', userData, {
             headers: {
                 'content-type': 'application/json'
             }

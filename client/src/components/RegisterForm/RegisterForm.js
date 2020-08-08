@@ -51,7 +51,7 @@ class RegisterForm extends Component {
             password
         }
 
-        axios.post("api/users/sign-up", userData, {
+        axios.post("users/sign-up", userData, {
             headers: {
                 'content-type': 'application/json'
             }
