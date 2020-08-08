@@ -47,7 +47,7 @@ class ResetPassword extends Component {
             newPassword: this.state.newPassword
         }
 
-        axios.post('/users/reset-password', body, {
+        axios.post('users/reset-password', body, {
             headers: {
                 'content-type': 'application/json'
             }

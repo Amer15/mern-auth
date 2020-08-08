@@ -50,7 +50,7 @@ class ForgotPassword extends Component {
             email
         }
 
-        axios.post("/users/forgot-password", userData, {
+        axios.post("users/forgot-password", userData, {
             headers: {
                 'content-type': 'application/json'
             }
