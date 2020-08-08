@@ -51,7 +51,7 @@ class RegisterForm extends Component {
             password
         }
 
-        axios.post("/users/sign-up", userData, {
+        axios.post("api/users/sign-up", userData, {
             headers: {
                 'content-type': 'application/json'
             }
@@ -100,6 +100,7 @@ class RegisterForm extends Component {
                                     type="text" 
                                     name="name" 
                                     placeholder="Enter name"
+                                    autoComplete="off"
                                     value={this.state.name}
                                     onChange={(e) => this.onChangeHandler(e)}  />
                                 </div>
@@ -108,6 +109,7 @@ class RegisterForm extends Component {
                                     <input 
                                     type="email" 
                                     name="email" 
+                                    autoComplete="off"
                                     placeholder="Enter email" 
                                     value={this.state.email}
                                     onChange={(e) => this.onChangeHandler(e)} />

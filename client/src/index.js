@@ -7,7 +7,7 @@ import App from './App';
 import { getCookie, signout } from './utils/helper';
 
 //BASE URL Prefix for all requests
-axios.defaults.baseURL = "http://localhost:8000/api"
+// axios.defaults.baseURL = "http://localhost:8000/api"
 
 axios.interceptors.request.use( config => {
   const token = getCookie('token');

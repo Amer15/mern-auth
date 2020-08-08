@@ -24,7 +24,7 @@ class ActivationPage extends Component {
     onClickHandler = () => {
         const { token } = this.props.match.params;
 
-        axios.post('users/activate-account', { token },
+        axios.post('api/users/activate-account', { token },
             {
                 headers: {
                     'Content-Type': 'application/json'

@@ -97,7 +97,7 @@ exports.signupHandler = (req, res) => {
 exports.activateAccount = (req, res) => {
     const { token } = req.body;
 
-    // console.log('token: '+ token);
+    console.log('token: '+ token);
     if (token) {
         return jwt.verify(token, process.env.JWT_ACCOUNT_ACTIVATION_KEY, (err) => {
             if (err) return res.status(400).json({

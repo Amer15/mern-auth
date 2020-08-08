@@ -14,35 +14,35 @@ connectToDB();
 
 const app = express();
 
-const PORT = process.env.PORT || NODE_PORT || 8000;
+const PORT = process.env.PORT || NODE_PORT || 5000;
 
 
-if(NODE_ENV === 'development'){
+if (NODE_ENV === 'development') {
     app.use(morgan('dev'));
     app.use(cors());
 
 }
-else{
+else {
     app.use(morgan('combined'));
 }
 
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-
-//In case frontend is rendered from nodejs
-app.use(express.static(path.join(__dirname, '/client/build')));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use('/api/users', userRoutes);
 
+if (process.env.NODE_ENV === 'production') {
+    //In case frontend is rendered from nodejs
+    app.use(express.static('client/build'));
 
-//for all the client requests
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-})
+    //for all the client requests
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + '/client/build/index.html'));
+    });
+}
 
 
 app.listen(PORT, () => console.log(`Server started in ${process.env.NODE_ENV} mode at PORT: ${PORT}`));

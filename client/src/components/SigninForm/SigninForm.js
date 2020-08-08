@@ -49,7 +49,7 @@ class SigninForm extends Component {
             password
         }
 
-        axios.post('users/sign-in', userData, {
+        axios.post('api/users/sign-in', userData, {
             headers: {
                 'content-type': 'application/json'
             }
@@ -99,6 +99,7 @@ class SigninForm extends Component {
                                     <input type="email"
                                         name="email"
                                         placeholder="Enter email"
+                                        autoComplete="off"
                                         value={this.state.email}
                                         onChange={(e) => this.onChangeHandler(e)} />
                                 </div>
